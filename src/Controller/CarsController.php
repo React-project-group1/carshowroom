@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Car;
 use App\Repository\CarRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -14,6 +13,8 @@ class CarsController extends AbstractController
     public function __construct(CarRepository $carRepository) { // Entity manager usable for all functions (constructor)
         $this->carRepository = $carRepository;
     }
+
+    // View all cars
     #[Route('/cars', name: 'cars')]
     public function index(): JsonResponse
     {
@@ -26,17 +27,14 @@ class CarsController extends AbstractController
         // $repository = $this->em->getRepository(Car::class);
 
         $cars = $this->carRepository->findAll();
-
         return $this->json( $cars );
     }
 
+    // Single car view
     #[Route('/cars/{id}', methods: ['GET'], name: 'show_car')]
     public function show($id): JsonResponse
     {
-        // $repository = $this->em->getRepository(Car::class);
         $car = $this->carRepository->find($id);
-        // $car = $this->carRepository->find($id);
-
         return $this->json( $car );
     }
 }
