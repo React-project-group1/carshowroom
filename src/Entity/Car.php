@@ -12,29 +12,29 @@ class Car
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    public ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $model = null;
+    public ?string $model = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $make = null;
+    public ?string $make = null;
 
     #[ORM\Column]
-    private ?int $mileage = null;
+    public ?int $mileage = null;
 
     #[ORM\Column]
-    private ?int $cost = null;
+    public ?int $cost = null;
 
     #[ORM\Column]
-    private ?float $engineSize = null;
+    public ?float $engineSize = null;
     // engine_size? in database
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $description = null;
+    public ?string $description = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $imagePath = null;
+    public ?string $imagePath = null;
 
     public function getId(): ?int
     {

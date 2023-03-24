@@ -30,6 +30,15 @@ class CarFixtures extends Fixture
         $car2->setImagePath('https://images.unsplash.com/photo-1679478878845-af7294f28b27?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
         $manager->persist($car2);
 
+        $car3 = new Car();
+        $car3->setModel('Ghost');
+        $car3->setMake('Rolls Royce');
+        $car3->setMileage(40000);
+        $car3->setCost(300000);
+        $car3->setEngineSize(6.6);
+        $car3->setDescription('This is a description of the Rolls Royce Ghost');
+        $car3->setImagePath('https://images.unsplash.com/photo-1624804269473-828dcc30a210?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80');
+        $manager->persist($car3);
         $manager->flush();
     }
 }

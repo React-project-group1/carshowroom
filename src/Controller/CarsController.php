@@ -3,16 +3,16 @@
 namespace App\Controller;
 
 use App\Entity\Car;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\CarRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CarsController extends AbstractController
 {
-    private $em;
-    public function __construct(EntityManagerInterface $em) { // Entity manager usable for all functions (constructor)
-        $this->em = $em;
+    private $carRepository;
+    public function __construct(CarRepository $carRepository) { // Entity manager usable for all functions (constructor)
+        $this->carRepository = $carRepository;
     }
     #[Route('/cars', name: 'cars')]
     public function index(): JsonResponse
@@ -23,12 +23,20 @@ class CarsController extends AbstractController
         // findOneBy() - SELECT * FROM cars WHERE id = 1 AND make = 'Ferrari' ORDER BY id DESC
         // count() - return length/number of rows. SELECT COUNT() FROM cars WHERE id = 1
         // getClassName() - returns current entity
+        // $repository = $this->em->getRepository(Car::class);
 
-        $repository = $this->em->getRepository(Car::class);
-        $cars = $repository->findAll();
+        $cars = $this->carRepository->findAll();
 
-        dd($cars);
+        return $this->json( $cars );
+    }
 
-        // return $this->json();
+    #[Route('/cars/{id}', methods: ['GET'], name: 'show_car')]
+    public function show($id): JsonResponse
+    {
+        // $repository = $this->em->getRepository(Car::class);
+        $car = $this->carRepository->find($id);
+        // $car = $this->carRepository->find($id);
+
+        return $this->json( $car );
     }
 }
