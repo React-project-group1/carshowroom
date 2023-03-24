@@ -9,13 +9,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CarsController extends AbstractController
 {
-    private $carRepository;
-    public function __construct(CarRepository $carRepository) { // Entity manager usable for all functions (constructor)
-        $this->carRepository = $carRepository;
-    }
+    public function __construct(private CarRepository $carRepository) {}// Entity manager usable for all functions (constructor)
 
     // View all cars
-    #[Route('/cars', name: 'cars')]
+    #[Route('/cars', methods: ['GET'], name: 'cars')]
     public function index(): JsonResponse
     {
         // findAll() - SELECT * FROM cars
