@@ -50,7 +50,6 @@ class CarFixtures extends Fixture
         $car4->setDescription('This is a description of the Rolls Royce Phantom');
         $car4->setImagePath('https://www.rolls-roycemotorcars.com/content/dam/rrmc/marketUK/rollsroycemotorcars_com/phantom-series-ii-in-detail/page-properties/01_RR_PHANTOM-single-card-min.jpg/jcr:content/renditions/cq5dam.web.1920.webp');
         $manager->persist($car4);
-        $manager->flush();
 
         $car5 = new Car();
         $car5->setModel('Wraith');
@@ -61,7 +60,6 @@ class CarFixtures extends Fixture
         $car5->setDescription('This is a description of the Rolls Royce Wraith');
         $car5->setImagePath('https://media.autoexpress.co.uk/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1608210716/autoexpress/2020/12/Rolls-Royce%20Wraith%20Kryptos%202020-3.jpg');
         $manager->persist($car5);
-        $manager->flush();
 
         $car6 = new Car();
         $car6->setModel('M4 CSL');
@@ -72,7 +70,6 @@ class CarFixtures extends Fixture
         $car6->setDescription('This is a description of the BMW M4 CSL');
         $car6->setImagePath('https://cdn.bimmertoday.de/wp-content/uploads/2022/12/Manhart-BMW-M4-CSL-G82-Tuning-MH4-GTR-II-02.jpg');
         $manager->persist($car6);
-        $manager->flush();
 
         $car7 = new Car();
         $car7->setModel('C63 S E');
@@ -83,7 +80,6 @@ class CarFixtures extends Fixture
         $car7->setDescription('This is a description of the Mercedes C63 S E');
         $car7->setImagePath('https://images.pistonheads.com/nimg/46601/blobid1.jpg');
         $manager->persist($car7);
-        $manager->flush();
 
         $car8 = new Car();
         $car8->setModel('E63 S');
@@ -94,7 +90,6 @@ class CarFixtures extends Fixture
         $car8->setDescription('This is a description of the Mercedes E63 S Final Edition');
         $car8->setImagePath('https://cdn.hiconsumption.com/wp-content/uploads/2022/05/2023-Mercedes-AMG-E-63-S-4MATIC-Plus-Final-Edition-0-Hero.jpg');
         $manager->persist($car8);
-        $manager->flush();
 
         $car9 = new Car();
         $car9->setModel('Huracan Evo');
@@ -105,7 +100,6 @@ class CarFixtures extends Fixture
         $car9->setDescription('This is a description of the Lamborghini Huracan Evo');
         $car9->setImagePath('https://media.gq-magazine.co.uk/photos/5d13a6d57fcc8e3a89820ec9/16:9/w_2560%2Cc_limit/huracan-evo-04-gq-17apr18_b.jpg');
         $manager->persist($car9);
-        $manager->flush();
 
         $car10 = new Car();
         $car10->setModel('Urus');
@@ -116,7 +110,6 @@ class CarFixtures extends Fixture
         $car10->setDescription('This is a description of the Lamborghini Urus');
         $car10->setImagePath('https://www.williamloughran.co.uk//media/7257/lamborghini-urus-80204-1.jpg');
         $manager->persist($car10);
-        $manager->flush();
 
         $car11 = new Car();
         $car11->setModel('GT3 RS');
