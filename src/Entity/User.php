@@ -67,4 +67,12 @@ class User
 
         return $this;
     }
+
+    public function toResponse(): array
+    {
+        return [
+            'email' => $this->email,
+            'password' => $this->password
+        ];
+    }
 }
