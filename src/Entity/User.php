@@ -14,13 +14,13 @@ class User
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $email = null;
+    public ?string $email = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $password = null;
+    public ?string $password = null;
 
     #[ORM\OneToOne(mappedBy: 'user', cascade: ['persist', 'remove'])]
-    private ?Purchase $purchase = null;
+    public ?Purchase $purchase = null;
 
     public function getId(): ?int
     {
